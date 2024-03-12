@@ -26,7 +26,7 @@ public class StatsService {
         return maxMonth + 1; // месяца нумеруются с 1, а индексы массива с 0, нужно сдвинуть ответ на 1
     }
 
-    public static int sumSalesAllMonth(long[] sales) {
+    public int sumSalesAllMonth(long[] sales) {
         int sumSales = 0;
 
         for (long number: sales) {
@@ -36,7 +36,7 @@ public class StatsService {
         return sumSales;
     }
 
-    public static int averageSalesAmount(long[] sales) {
+    public int averageSalesAmount(long[] sales) {
         int averageSales = 0;
 
         for (long number: sales) {
@@ -47,8 +47,8 @@ public class StatsService {
         return averageSales;
     }
 
-    public static int monthWithSalesMinAverage(long[] sales) {
-        int minSalesMonth = averageSalesAmount(sales);
+    public int monthWithSalesMinAverage(long[] sales) {
+        long minSalesMonth = averageSalesAmount(sales);
         int amtMonth = 0;
         for (long sale : sales) {
             if (sale < minSalesMonth)
@@ -57,8 +57,8 @@ public class StatsService {
         return amtMonth;
     }
 
-    public static int monthWithSalesMaxAverage(long[] sales) {
-        int maxSalesMonth = averageSalesAmount(sales);
+    public int monthWithSalesMaxAverage(long[] sales) {
+        long maxSalesMonth = averageSalesAmount(sales);
         int amtMonth = 0;
         for (long sale : sales) {
             if (sale > maxSalesMonth)
